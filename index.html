@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>D3 Network Graph</title>
+<meta name="description" content="Interactive visualization for analysing network data in d3.js">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+div.tooltip {		
+  line-height: 1;
+  padding: 12px;
+  font: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 8px;			
+}
+.popover {
+  left: -150px !important;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Network Analysis of Trading data</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="#" title="Created by" data-placement="bottom" data-toggle="popover" data-trigger="focus" data-content="Satyabrat Borgohain">
+            <span class="glyphicon glyphicon-info-sign"></span> 
+            About
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    
+  <div class="row">
+    <div class="col-md-2">
+      <div class="well well-sm">
+        <div style="padding-bottom: 10px;">
+          <strong ><center>Key features</center></strong>
+        </div>
+        <ul style="padding-left: 15px;"> 
+          <li>
+          The size of the nodes are proportional to the total amount of trading for that location/site.
+          </li>
+          <li>
+          The width of the links between the nodes represent the proportional amount of trading between the two.
+          </li>
+          <li>
+          The connectivity between different sites can be highlighted by hovering over a node. A tooltip displays information regarding the total trading amount for a location as well as the number of connected locations.
+         </li>
+        </ul> 
+      </div>
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+        <div id="network" class="svgCanvas"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
